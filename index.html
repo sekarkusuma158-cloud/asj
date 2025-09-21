@@ -3,52 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Pembelajaran Matematika</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>gladys store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>📘 Media Pembelajaran Matematika</h1>
-    <p>Belajar jadi seru dengan desain pink lucu ✨</p>
+    <h1>👕 gladys store</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#products">Produk</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#materi">Materi</a>
-    <a href="#latihan">Latihan</a>
-    <a href="#worksheet">Worksheet</a>
-  </nav>
+  <!-- Search -->
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="cari baju favoritmu...">
+    <button>cari</button>
+  </section>
 
-  <section id="materi">
-    <h2>📖 Materi</h2>
-    <div class="accordion">
-      <button class="accordion-btn">Penjumlahan</button>
-      <div class="accordion-content">
-        <p>Penjumlahan adalah operasi dasar matematika untuk menambahkan dua bilangan atau lebih.</p>
+  <!-- Produk -->
+  <section id="products" class="product-section">
+    <h2>Koleksi Baju Terbaru</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="dd850040-0ab0-4bc2-b19d-fa426fb067ab.jfif" alt="Baju 1">
+        <h3>Dress</h3>
+        <p>Rp 120.000</p>
+        <button>Beli Sekarang</button>
       </div>
-      <button class="accordion-btn">Pengurangan</button>
-      <div class="accordion-content">
-        <p>Pengurangan adalah operasi kebalikan dari penjumlahan.</p>
+      <div class="product-card">
+        <img src="@intothetrashcan_.jfif" alt="Baju 2">
+        <h3>gaun santai</h3>
+        <p>Rp 150.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+      <div class="product-card">
+        <img src="White Dress With Delicate Flower Print, Floral Summer Dress, Sleeveless Sundress, White Casual Dress PNG Transparent Image and Clipart for Free Download.jfif" alt="Baju 3">
+        <h3>Dress Floral</h3>
+        <p>Rp 200.000</p>
+        <button>Beli Sekarang</button>
       </div>
     </div>
   </section>
 
-  <section id="latihan">
-    <h2>📝 Latihan Soal</h2>
-    <div id="quiz"></div>
-    <button id="submitQuiz">Periksa Jawaban</button>
-    <p id="result"></p>
+  <!-- Kontak -->
+  <section id="contact" class="contact-section">
+    <h2>Hubungi Kami</h2>
+    <form>
+      <input type="text" placeholder="Nama Anda" required>
+      <input type="email" placeholder="Email Anda" required>
+      <textarea placeholder="Pesan Anda..." required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
   </section>
 
-  <section id="worksheet">
-    <h2>📄 Worksheet</h2>
-    <p>Klik tombol di bawah untuk mencetak worksheet latihan.</p>
-    <button onclick="window.print()">Cetak Worksheet</button>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Media Pembelajaran Matematika | Dibuat dengan 💖</p>
-  </footer>
+    <p>© 2025 gladys store. Semua Hak Dilindungi.</p>
+    
+<script>
+  function cariBaju() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let produk = document.getElementsByClassName("produk");
 
-  <script src="js/script.js"></script>
+    for (let i = 0; i < produk.length; i++) {
+      let nama = produk[i].getAttribute("data-nama").toLowerCase();
+
+      if (nama.includes(input)) {
+        produk[i].style.display = "block";
+      } else {
+        produk[i].style.display = "none";
+      }
+    }
+  }
+</script>
 </body>
 </html>
