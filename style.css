@@ -3,110 +3,168 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Body */
-body {
-  background-color: #ffe6f2;
-  color: #333;
-  line-height: 1.6;
+/* Warna utama ceria */
+:root {
+  --pink: #ff9ecd;
+  --kuning: #fff176;
+  --biru: #81d4fa;
+  --hijau: #a5d6a7;
+  --ungu: #ce93d8;
+  --gelap: #333;
+  --putih: #fff;
 }
 
 /* Header */
 header {
-  text-align: center;
-  padding: 2rem;
-  background: #ffb6c1;
-  border-bottom: 4px solid #ff9eb5;
+  background: var(--pink);
+  color: var(--putih);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 26px;
 }
-header p {
-  font-size: 1.1rem;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--putih);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: var(--kuning);
 }
 
-/* Navigation */
-nav {
+/* Search Bar */
+.search-bar {
+  margin: 20px auto;
+  text-align: center;
+}
+.search-bar input {
+  padding: 10px;
+  width: 280px;
+  border: 2px solid var(--pink);
+  border-radius: 20px;
+}
+.search-bar button {
+  padding: 10px 15px;
+  border: none;
+  background: var(--biru);
+  color: var(--putih);
+  border-radius: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.search-bar button:hover {
+  background: var(--hijau);
+}
+
+/* Produk */
+.product-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #fefefe;
+}
+.product-section h2 {
+  margin-bottom: 25px;
+  color: var(--gelap);
+}
+.product-list {
   display: flex;
   justify-content: center;
-  background: #ff9eb5;
-  padding: 0.8rem;
+  gap: 25px;
+  flex-wrap: wrap;
 }
-nav a {
-  margin: 0 1rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+.product-card {
+  background: var(--putih);
+  padding: 15px;
+  width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-nav a:hover {
-  text-decoration: underline;
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
-
-/* Sections */
-section {
-  padding: 2rem;
-}
-section h2 {
-  color: #d63384;
-  margin-bottom: 1rem;
-}
-
-/* Accordion */
-.accordion-btn {
+.product-card img {
   width: 100%;
-  background: #ffb6c1;
-  color: #333;
-  text-align: left;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
+  border-radius: 12px;
 }
-.accordion-content {
-  display: none;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #fff0f5;
-  border-radius: 8px;
+.product-card h3 {
+  margin: 12px 0;
+  color: var(--gelap);
+}
+.product-card p {
+  font-weight: bold;
+  color: var(--pink);
+}
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: var(--ungu);
+  color: var(--putih);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.product-card button:hover {
+  background: var(--pink);
 }
 
-/* Quiz */
-#quiz {
-  margin-bottom: 1rem;
+/* Kontak */
+.contact-section {
+  padding: 40px 20px;
+  background: var(--kuning);
+  text-align: center;
 }
-#quiz div {
-  background: #fff0f5;
-  padding: 1rem;
-  margin-bottom: 1rem;
+.contact-section h2 {
+  margin-bottom: 20px;
+  color: var(--gelap);
+}
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  border: 2px solid var(--biru);
   border-radius: 10px;
 }
-#submitQuiz {
-  background: #ff69b4;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
+.contact-section button {
+  padding: 12px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-#submitQuiz:hover {
-  background: #e75480;
-}
-#result {
+  background: var(--pink);
+  color: var(--putih);
   font-weight: bold;
-  margin-top: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact-section button:hover {
+  background: var(--ungu);
 }
 
 /* Footer */
 footer {
+  background: var(--gelap);
+  color: var(--putih);
   text-align: center;
-  padding: 1rem;
-  background: #ff9eb5;
-  color: #fff;
-  margin-top: 2rem;
+  padding: 15px;
+  margin-top: 20px;
 }
